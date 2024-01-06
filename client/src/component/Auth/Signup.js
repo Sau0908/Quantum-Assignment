@@ -17,12 +17,15 @@ const Signup = () => {
   const handleSignup = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:5000/signup", {
-        username,
-        dateOfBirth,
-        email,
-        password,
-      });
+      const response = await axios.post(
+        "https://quantum-task-9l39.onrender.com/signup",
+        {
+          username,
+          dateOfBirth,
+          email,
+          password,
+        }
+      );
       if (response.status === 200) {
         const { token } = response.data;
         localStorage.setItem("token", token);

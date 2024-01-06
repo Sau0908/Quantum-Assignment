@@ -15,10 +15,13 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:5000/login", {
-        email,
-        password,
-      });
+      const response = await axios.post(
+        "https://quantum-task-9l39.onrender.com/login",
+        {
+          email,
+          password,
+        }
+      );
       if (response.status === 200) {
         const { token } = response.data;
         localStorage.setItem("token", token);

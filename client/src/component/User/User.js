@@ -31,7 +31,9 @@ const User = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/users");
+        const response = await axios.get(
+          "https://quantum-task-9l39.onrender.com/users"
+        );
         const fetchedUsers = response.data;
         setUsers(fetchedUsers);
       } catch (error) {
@@ -49,7 +51,9 @@ const User = () => {
         toast.error("Not authorized to delete this user");
         return;
       }
-      await axios.delete(`http://localhost:5000/users/${userId}`);
+      await axios.delete(
+        `https://quantum-task-9l39.onrender.com/users/${userId}`
+      );
       const updatedUsers = users.filter((user) => user._id !== userId);
       setUsers(updatedUsers);
       console.log(`User with ID ${userId} deleted successfully`);
@@ -80,10 +84,13 @@ const User = () => {
         return;
       }
 
-      await axios.post("http://localhost:5000/users/addmessages", {
-        userId: selectedUserId,
-        message: messageInput,
-      });
+      await axios.post(
+        "https://quantum-task-9l39.onrender.com/users/addmessages",
+        {
+          userId: selectedUserId,
+          message: messageInput,
+        }
+      );
 
       setMessageInput("");
       setSelectedUserId("");
@@ -105,7 +112,7 @@ const User = () => {
       }
       console.log(userId);
       const response = await axios.get(
-        `http://localhost:5000/users/${userId}/messages`
+        `https://quantum-task-9l39.onrender.com/users/${userId}/messages`
       );
       console.log("hello world");
       const userMessages = response.data.messages;
