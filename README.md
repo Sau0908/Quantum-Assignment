@@ -12,7 +12,7 @@ use the above command to run both client and server
 
 About Project :
 
-The project consists of both frontend and backend components. The frontend is developed using React.js, incorporating React Bootstrap for styling. On the other hand, the backend is built with Node.js and Express.js. MongoDB serves as the database for storing user records.
+The project consists of both frontend and backend . The frontend is developed using React.js, incorporating React Bootstrap for styling. On the other hand, the backend is built with Node.js and Express.js. MongoDB serves as the database for storing user records.
 
 Functionality:
 
